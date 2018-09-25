@@ -1,0 +1,5 @@
+grpcio
+grpcio-tools
+protobuf
+googleapis-common-protos
+mypy-protobuf

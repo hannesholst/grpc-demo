@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+// HelloWorld service to demo gRPC with
+service HelloWorld {
+
+    // Say hello to my little friend!
+    rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {
+        option (google.api.http) = { get: "/api/helloworld/say-hello" };
+    }
+
+    // Try a response stream
+    rpc GetNumbers (google.protobuf.Empty) returns (stream GetNumbersResponse) {}
+
+    // Try a bidirectional stream
+    rpc MultiplyNumbers (stream MultiplyNumbersRequest) returns (stream MultiplyNumbersResponse) {}
+
+}
+
+// Request to say hello
+message SayHelloRequest {
+    // Person to be used in the response
+    string name = 1;
+}
+
+// The hello response
+message SayHelloResponse {
+    // Some nice resulting text
+    string text = 1;
+}
+
+
+message GetNumbersResponse {
+    int32 number = 1;
+}
+
+message MultiplyNumbersRequest {
+    int32 number = 1;
+}
+
+message MultiplyNumbersResponse {
+    int32 number = 2;
+}

@@ -1,0 +1,6 @@
+[submodule "proto/protobuf"]
+	path = proto/protobuf
+	url = https://github.com/protocolbuffers/protobuf.git
+[submodule "proto/grpc-gateway"]
+	path = proto/grpc-gateway
+	url = https://github.com/grpc-ecosystem/grpc-gateway.git
